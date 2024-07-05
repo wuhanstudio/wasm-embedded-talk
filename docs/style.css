@@ -35,3 +35,7 @@
     overflow-y: visible;  !important;
     overflow-x: hidden !important;
 }
+
+.reveal [hidden] {
+    display: block !important;
+}
