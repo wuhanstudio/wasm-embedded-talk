@@ -33,8 +33,10 @@
                     <span class="menu-title" style="display: none">Overview</span>
                     <h3 class="r-fit-text">WASM on Embedded Systems (RTOS)</h3>
                     <h5 class="text-end">Real-Time Operating System</h5>
+                    <br />
+                    <br />
                     <p class="name" style="font-size: 25px;">Han Wu, University of Exeter, the UK</p>
-                    <div class="r-hstack">
+                    <!-- <div class="r-hstack">
                         <div>
                             <a href="https://wuhanstudio.cc">
                               <img align="center" width=55% src="https://github-readme-stats.wuhanstudio.vercel.app/api?username=wuhanstudio&include_all_commits=true&show_icons=true&hide=issues&count_private=true" />
@@ -43,7 +45,7 @@
                               <img align="center" width=40% src="https://github-readme-stats.wuhanstudio.vercel.app/api/top-langs/?username=wuhanstudio&layout=compact&langs_count=6" />
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                     <p style="font-size: 22px;"><i class="fab fa-github"></i> &nbsp; <a href="https://github.com/wuhanstudio/wasm-embedded">Source Code</a></p>
 
                     <aside class="notes">
@@ -53,6 +55,147 @@
                 <section data-background-video="images/demo.mp4" data-background-video data-background-video-muted data-menu-title="Demo Project">
                     <aside class="notes">
                     </aside>
+                </section>
+
+                <section>
+                    <div class="row">
+                        <div class="col col-3">
+                            <img src="images/opencv.jpg" />
+                        </div>
+                        <div class="col col-3 fragment" data-fragment-index="2">
+                            <img src="images/arrow.jpg" />
+                        </div>
+                        <div class="col col-3 fragment" data-fragment-index="2">
+                            <img src="images/wasm-code.jpg" style="margin-left: 0; margin-right: 0;" />
+                        </div>
+                        <div class="col col-3 fragment" data-fragment-index="1">
+                            <img src="images/browser.jpg" style="margin-left: 0; margin-right: 0;"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-3">
+                            <p style="font-size: 26px;">C/C++ Libraries <br/> (OpenCV, Eigen, etc)</p>
+                        </div>
+                        <div class="col col-3"></div>
+                        <div class="col col-6 fragment" data-fragment-index="3">
+                            <p style="font-size: 26px; border: 1px  solid black; padding: 10px;">Chrome V8 (WASM Runtime)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="row">
+                        <div class="col col-5">
+                            <div class="row">
+                                <div class="col col-6">
+                                    <img src="images/wasm-code.jpg" class="m-zero"/>
+                                </div>
+                                <div class="col col-6">
+                                    <img src="images/dino.jpg" class="m-zero"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p style="font-size: 24px; border: 1px  solid black; padding: 5px;" class="m-zero">Chrome  (V8 Runtime)</p>
+                            <p style="font-size: 18px;">Intel i7 (1.9GHz) - 16GB RAM</p>
+                        </div>
+                        </div>
+
+                        <div class="col col-2"></div>
+
+                        <div class="col col-5">
+                            <div class="row">
+                                <div class="col col-6">
+                                    <img src="images/wasm-code.jpg" class="m-zero" />
+                                </div>
+                                <div class="col col-6">
+                                    <img src="images/arm-linux.gif" class="m-zero"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <p style="font-size: 24px; border: 1px  solid black; padding: 5px;" class="m-zero">ARM Linux (WASM3 Runtime)</p>
+                            <p style="font-size: 18px;">Cortex-A7 (1.2GHz) -  64MB RAM</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="row">
+                        <div class="col col-5">
+                            <div class="row">
+                                <div class="col col-6">
+                                    <img src="images/wasm-code.jpg" class="m-zero"/>
+                                </div>
+                                <div class="col col-6">
+                                    <img src="images/rt-thread.gif" class=""/>
+                                </div>
+                                <div class="col col-3">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            <p style="font-size: 24px; border: 1px  solid black; padding: 5px;" class="m-zero">RTOS (WAMR Runtime)</p>
+                            <p style="font-size: 18px;">Cortex-M4 (120MHz) - 640KB RAM</p>
+                        </div>
+                        </div>
+
+                        <div class="col col-2"></div>
+
+                        <div class="col col-5">
+                            <div class="row">
+                                <div class="col col-6">
+                                    <img src="images/wasm-code.jpg" class="m-zero"/>
+                                </div>
+                                <div class="col col-6">
+                                    <img src="images/esp32.gif" class="m-zero"/>
+                                </div>
+                                <div class="col col-3">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            <p style="font-size: 24px; border: 1px  solid black; padding: 5px;" class="m-zero">Arduino (WASM3 Runtime)</p>
+                            <p style="font-size: 18px;">ESP32 (240MHz) - 520KB RAM</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="row">
+                        <div class="col col-4 text-end">
+                            <br />
+                            <img src="images/gui.jpg" width="50%" class="m-zero">
+                            <p style="font-size: 18px;" class="m-zero">GUI (HDMI, LCD)</p>
+                            <p style="font-size: 18px;" class="m-zero">&nbsp;</p>
+                            <p style="font-size: 18px;" class="m-zero">wasi-filesystem</p>
+                            <p style="font-size: 18px;" class="m-zero">wasi-sockets</p>
+                            <p style="font-size: 18px;" class="m-zero">&nbsp;</p>
+                            <p style="font-size: 18px;" class="m-zero">wasi-digital-io</p>
+                            <p style="font-size: 18px;" class="m-zero">wasi-i2c</p>
+                            <p style="font-size: 18px;" class="m-zero">wasi-spi</p>
+                        </div>
+                        <div class="col col-4">
+                            <br />
+                            <img src="images/wasi.jpg" alt="" srcset="">
+                        </div>
+                        <div class="col col-4">
+                            <img src="images/language.jpg" width="90%">
+                        </div>
+                    </div>
+                    <a href="https://github.com/WebAssembly/WASI/blob/main/Proposals.md"><p style="font-size: 22px;" class="m-zero">Web Assembly System Interface (WASI) Support</p></a>
+                    <div class="row">
+                        <div class="col col-2"></div>
+                        <div class="col col-8">
+                            <img src="images/summary.png" alt="" srcset="">
+                        </div>
+                        <div class="col col-2"></div>
+                    </div>
+                </section>
+
+                <section>
+                    <p>Should we start using WASM now?</p>
+                    <p>Familiar with hardware, but not the runtime</p>
                 </section>
 
                 <section>
