@@ -49,11 +49,13 @@
                     <p style="font-size: 22px;"><i class="fab fa-github"></i> &nbsp; <a href="https://github.com/wuhanstudio/wasm-embedded">Source Code</a></p>
 
                     <aside class="notes">
+                        Hi, I'm a Ph.D. student at University of Exeter, in the UK. I'll show you how to use Web Assembly, or WASM, on Embedded Systems that use Real-Time Operating System. Mybe it's more intuitive to show you a quick demo.
                     </aside>
                 </section>
 
                 <section data-background-video="images/demo.mp4" data-background-video data-background-video-muted data-menu-title="Demo Project">
                     <aside class="notes">
+                        The same WASM code runs on different platforms. But how?
                     </aside>
                 </section>
 
@@ -81,6 +83,12 @@
                             <p style="font-size: 26px; border: 1px  solid black; padding: 10px;">Chrome V8 (WASM Runtime)</p>
                         </div>
                     </div>
+                    <aside class="notes">
+                        WebAssembly was designed for browsers. Before we have WebAssembly, web browsers only recognize JavaScript code. But some of the most popular libraries, such as OpenCv, were written in C/C++. We can't just use these libraries for web applications. 
+                        <br/>
+                        <br/>
+                        To solve this problem, we have WebAssembly. We can first compile C/C++ libraries to WASM code, and the browser provides a WASM runtime, so that we can use these libraries for web applications. This is how we use WASM in the browser. You may ask, how about embedded systems?
+                    </aside>
                 </section>
 
                 <section>
@@ -105,16 +113,16 @@
                         <div class="col col-5">
                             <div class="row">
                                 <div class="col col-6">
-                                    <img src="images/wasm-code.jpg" class="m-zero" />
+                                    <img src="images/wasm-code.jpg" class="m-zero fragment" data-fragment-index="2"/>
                                 </div>
                                 <div class="col col-6">
-                                    <img src="images/arm-linux.gif" class="m-zero"/>
+                                    <img src="images/arm-linux.gif" class="m-zero fragment" data-fragment-index="3"/>
                                 </div>
                             </div>
                             <div class="row">
-                            <p style="font-size: 24px; border: 1px  solid black; padding: 5px;" class="m-zero">ARM Linux (WASM3 Runtime)</p>
-                            <p style="font-size: 18px;">Cortex-A7 (1.2GHz) -  64MB RAM</p>
-                        </div>
+                                <p style="font-size: 24px; border: 1px  solid black; padding: 5px;" class="m-zero fragment" data-fragment-index="2">ARM Linux (WASM3 Runtime)</p>
+                                <p style="font-size: 18px;" class="fragment" data-fragment-index="1">Cortex-A7 (1.2GHz) -  64MB RAM</p>
+                            </div>
                         </div>
                     </div>
 
@@ -124,24 +132,24 @@
                         <div class="col col-5">
                             <div class="row">
                                 <div class="col col-6">
-                                    <img src="images/wasm-code.jpg" class="m-zero"/>
+                                    <img src="images/wasm-code.jpg" class="m-zero fragment" data-fragment-index="5"/>
                                 </div>
                                 <div class="col col-6">
-                                    <img src="images/rt-thread.gif" class=""/>
+                                    <img src="images/rt-thread.gif" class="fragment" data-fragment-index="6"/>
                                 </div>
                                 <div class="col col-3">
 
                                 </div>
                             </div>
                             <div class="row">
-                            <p style="font-size: 24px; border: 1px  solid black; padding: 5px;" class="m-zero">RTOS (WAMR Runtime)</p>
-                            <p style="font-size: 18px;">Cortex-M4 (120MHz) - 640KB RAM</p>
+                            <p style="font-size: 24px; border: 1px  solid black; padding: 5px;" class="m-zero fragment" data-fragment-index="5">RT-Thread (WAMR Runtime)</p>
+                            <p style="font-size: 18px;" class="fragment" data-fragment-index="4">Cortex-M4 (120MHz) - 640KB RAM</p>
                         </div>
                         </div>
 
                         <div class="col col-2"></div>
 
-                        <div class="col col-5">
+                        <div class="col col-5 fragment">
                             <div class="row">
                                 <div class="col col-6">
                                     <img src="images/wasm-code.jpg" class="m-zero"/>
@@ -159,44 +167,69 @@
                             </div>
                         </div>
                     </div>
+
+                    <aside class="notes">
+                        Embedded Systems have very limited hardware resources. For example, a web browser may consume a lot of memory and CPU resources. For a laptop, it is very common to have 16GB of memory. What if we only have 64MB of memory and a slower ARM CPU. In this case, we need a different WASM runtime, which runs on ARM Linux and does not need a browser. Now, we can run the same WASM code on ARM Linux, or Embedded Linux.
+                        <br />
+                        <br />
+                        However, ARM Linux is still Linux, what if we only have 640KB of Memory? We don't even have sufficient memory to run Linux. And the CPU is so much slower, it runs at 120MHz, rather than 1.2GHz. To solve this problem, we have WASM Micro-Runtime that runs on Real-time Operating System, such as Zephyr, RT-Thread, FreeRTOS, etc. Now we have WASM on Embedded Systems. For this demo application, I used RT-Thread, an open-source Real-time Operating System.
+                        <br />
+                        <br />
+                        And the last one, Arduino, which is an open-source hardware and sorftware platform. We can run WASM on even smaller devices.
+                        <br />
+                        <br />
+                        This is how we use WASM on different platforms. Basically, we use different WASM runtime to run the WASM code.
+                    </aside>
                 </section>
 
                 <section>
                     <div class="row">
                         <div class="col col-4 text-end">
                             <br />
-                            <img src="images/gui.jpg" width="50%" class="m-zero">
-                            <p style="font-size: 18px;" class="m-zero">GUI (HDMI, LCD)</p>
+                            <img src="images/gui.jpg" width="50%" class="m-zero fragment" data-fragment-index="1">
+                            <p style="font-size: 18px;" class="m-zero fragment" data-fragment-index="1">GUI (HDMI, LCD)</p>
                             <p style="font-size: 18px;" class="m-zero">&nbsp;</p>
-                            <p style="font-size: 18px;" class="m-zero">wasi-filesystem</p>
-                            <p style="font-size: 18px;" class="m-zero">wasi-sockets</p>
+                            <p style="font-size: 18px;" class="m-zero fragment" data-fragment-index="2">wasi-filesystem</p>
+                            <p style="font-size: 18px;" class="m-zero fragment" data-fragment-index="3">wasi-sockets</p>
                             <p style="font-size: 18px;" class="m-zero">&nbsp;</p>
-                            <p style="font-size: 18px;" class="m-zero">wasi-digital-io</p>
-                            <p style="font-size: 18px;" class="m-zero">wasi-i2c</p>
-                            <p style="font-size: 18px;" class="m-zero">wasi-spi</p>
+                            <p style="font-size: 18px;" class="m-zero fragment" data-fragment-index="4">wasi-digital-io</p>
+                            <p style="font-size: 18px;" class="m-zero fragment" data-fragment-index="5">wasi-i2c</p>
+                            <p style="font-size: 18px;" class="m-zero fragment" data-fragment-index="6">wasi-spi</p>
                         </div>
                         <div class="col col-4">
                             <br />
                             <img src="images/wasi.jpg" alt="" srcset="">
                         </div>
                         <div class="col col-4">
-                            <img src="images/language.jpg" width="90%">
+                            <img src="images/language.jpg" width="90%" class="fragment" data-fragment-index="8">
                         </div>
                     </div>
-                    <a href="https://github.com/WebAssembly/WASI/blob/main/Proposals.md"><p style="font-size: 22px;" class="m-zero">Web Assembly System Interface (WASI) Support</p></a>
+                    <a href="https://github.com/WebAssembly/WASI/blob/main/Proposals.md"><p style="font-size: 22px;" class="m-zero fragment" data-fragment-index="7">Web Assembly System Interface (WASI) Support</p></a>
                     <div class="row">
                         <div class="col col-2"></div>
                         <div class="col col-8">
-                            <img src="images/summary.png" alt="" srcset="">
+                            <img src="images/summary.png" alt="" srcset="" class="fragment">
                         </div>
                         <div class="col col-2"></div>
                     </div>
+
+                    <aside class="notes">
+                        If we look at the WASM code. Basically, it performs some computation and stores the data to the memory. If we send the memory to a screen, we see the image. But for embedded systems, comprated with the Graphic User Interface, we care more about access to the hardware, such as the filesystem, web sockets, gpio, i2c and spi communication bus, so that we can interact with different sensors. This is one of the major differences between using WASM in the browser and WASM on embedded systems. For embedded systems, we need access to the low-level hardware.
+                        <br />
+                        <br />
+                        This problem can be solved using WASM System Interface, or WASI.
+                        <br />
+                        <br />
+                        Another benefit of using WASM is that it supports different programming languages. For example, we can compile C/C++, Rust and Golang to WASM code. We can use different programming languages to develop WASM applications.
+                        <br />
+                        <br />
+                        Here's a summary of the hardware, runtime, and programming languages I used in this project.
+                    </aside>
                 </section>
 
-                <section>
+                <!-- <section>
                     <p>Should we start using WASM now?</p>
-                    <p>Familiar with hardware, but not the runtime</p>
-                </section>
+                </section> -->
 
                 <section>
                     <h2>Thanks</h2>
@@ -205,6 +238,10 @@
                     </div>
                     <img src="images/qrcode.png" width="25%" />
                     <p style="font-size: 22px;"><i class="fab fa-github"></i> &nbsp; <a href="https://github.com/wuhanstudio/wasm-embedded">Source Code</a></p>
+
+                    <aside class="notes">
+                        You can find the source code on GitHub and more information about related projects. If you scan the QR code, you can find talk slides and links to the source code. Thank you. This is the end of my presentation.
+                    </aside>
                 </section>
 
             </div>
